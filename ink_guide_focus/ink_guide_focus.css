@@ -1,0 +1,254 @@
+.i_guide_bg {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 900;
+}
+
+.i_guide_wrap {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  background-color: #2a2d2f;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1100;
+}
+
+.i_guide_wrap .guide_tit {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #565656;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.i_guide_wrap .guide_cont_wrap {
+  display: block;
+  width: 100%;
+  height: 156px;
+  overflow-y: auto;
+}
+
+.i_guide_wrap .guide_cont_wrap .guide_cont {
+  display: block;
+  width: 100%;
+  height: auto;
+  line-height: 1.5;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+}
+
+.i_guide_wrap .guide_btn_box {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  align-items: center;
+  border-top: 1px solid #565656;
+  gap: 10px;
+  transition: all 0.35s ease;
+  padding-top: 10px;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  color: #fff;
+  position: relative;
+  border: 1px solid transparent;
+  transition: all 0.35s ease;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn::before, .i_guide_wrap .guide_btn_box .guide_btn::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 12px;
+  background-color: #fff;
+  position: absolute;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.prev::before, .i_guide_wrap .guide_btn_box .guide_btn.prev::after, .i_guide_wrap .guide_btn_box .guide_btn.next::before, .i_guide_wrap .guide_btn_box .guide_btn.next::after {
+  background-color: #0080ff;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.disable::before, .i_guide_wrap .guide_btn_box .guide_btn.disable::after {
+  background-color: #999;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.prev::before {
+  left: 50%;
+  top: calc(50% - 4px);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.prev::after {
+  left: 50%;
+  top: calc(50% + 4px);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.next::before {
+  left: 50%;
+  top: calc(50% + 4px);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.next::after {
+  left: 50%;
+  top: calc(50% - 4px);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.close {
+  margin-right: auto;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.close::before, .i_guide_wrap .guide_btn_box .guide_btn.close::after {
+  height: 18px;
+  left: 50%;
+  top: 50%;
+  background-color: #ed2a61;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.close_keep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  background-color: #999;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.close_keep:hover {
+  background-color: #ed2a61;
+  color: #fff;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.close_keep::before, .i_guide_wrap .guide_btn_box .guide_btn.close_keep::after {
+  display: none;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn:focus, .i_guide_wrap .guide_btn_box .guide_btn:hover {
+  filter: drop-shadow(0 0 4px #0080ff);
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.close_keep:focus, .i_guide_wrap .guide_btn_box .guide_btn.close_keep:active, .i_guide_wrap .guide_btn_box .guide_btn.close_keep:hover {
+  filter: none;
+}
+
+.i_guide_wrap .guide_btn_box .guide_btn.disable:focus, .i_guide_wrap .guide_btn_box .guide_btn.disable:active, .i_guide_wrap .guide_btn_box .guide_btn.disable:hover {
+  filter: none;
+  cursor: default;
+}
+
+.i_guide_focus_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 900;
+  width: 28px;
+  height: 28px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 100%);
+  z-index: 1100;
+  background-color: #fff;
+  color: #0080ff;
+  box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.2);
+  border: 4px solid #0080ff;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.i_guide_focus_box.active {
+  opacity: 1;
+  animation: i_guide_focus_ani 1s infinite forwards alternate ease-out;
+}
+
+.i_guide_focus_box::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #0080ff;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+}
+
+@keyframes i_guide_focus_ani {
+  0% {
+    transform: translate(-50%, calc(-100% + 5px)) scale(1.1, 0.9);
+  }
+  15% {
+    transform: translate(-50%, -100%) scale(1, 1);
+  }
+  95% {
+    transform: translate(-50%, calc(-100% - 10px)) scale(1, 1);
+  }
+  100% {
+    transform: translate(-50%, calc(-100% - 10px)) scale(1, 1);
+  }
+}
+
+.i_guide_clone {
+  position: fixed;
+  z-index: 1000;
+  cursor: default;
+  box-shadow: 0 0 10px transparent;
+  background-color: #fff;
+  animation: i_guide_ani 1s infinite  alternate linear forwards;
+  pointer-events: none;
+}
+
+@keyframes i_guide_ani {
+  from {
+    border: 1px solid transparent;
+  }
+  to {
+    border: 1px solid #000;
+  }
+}
