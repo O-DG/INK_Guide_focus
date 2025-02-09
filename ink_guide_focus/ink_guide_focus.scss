@@ -11,9 +11,9 @@ $point_color : #ed2a61;
 $focus_line_color : #000;
 
 // 가이드 랩 최대 너비
-$guide_wrap_max_width : 420px;
+$guide_wrap_max_width : 360px;
 // 내용 높이
-$guide_cont_wrap_height : 156px;
+$guide_cont_wrap_height : 100px;
 // 포커스 박스
 $guide_focus_box_size : 28px;
 
@@ -21,11 +21,22 @@ $guide_focus_box_size : 28px;
 // 가이드    
 .i_guide_bg {display: block; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); position: fixed; left: 0; top: 0; z-index: 900;}
 .i_guide_wrap {display: block; width: 100%; max-width: $guide_wrap_max_width; height: auto; background-color: $main_bg_color; color: $font_color; font-size: 14px; font-weight: 400; padding: 20px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 1100;
+
+    @media screen and (max-width: 800px) {
+        width: calc(100% - 20px);
+        top: initial; bottom: 10px; transform: translate(-50%,0);
+    }
+
     // 제목
     .guide_tit {display: block; width: 100%; height: auto; padding-bottom: 10px; border-bottom: 1px solid $line_color; margin-bottom: 20px; font-size: 18px; font-weight: bold; line-height: 1.2;}
     // 내용
     .guide_cont_wrap {display: block; width: 100%; height: $guide_cont_wrap_height; overflow-y: auto;
         .guide_cont {display: block; width: 100%; height: auto; line-height: 1.5; font-size: inherit; font-weight: inherit; margin: 0; padding: 0; word-break: keep-all;}
+
+        @media screen and (max-width: 800px) {
+            height: auto;
+            max-height: 100px;
+        }
     }
     // 버튼
     .guide_btn_box {display: flex; width: 100%; height: auto; margin-top: 20px; align-items: center; border-top: 1px solid $line_color; gap: 10px; transition: all 0.35s ease; padding-top: 10px;
@@ -66,7 +77,7 @@ $guide_focus_box_size : 28px;
 
 
 // 가이드 포커스 박스
-.i_guide_focus_box {display: flex; align-items: center; justify-content: center; line-height: 1; font-size: 18px; font-weight: 900; width: $guide_focus_box_size; height: $guide_focus_box_size; position: fixed; left: 50%; top: 50%; transform: translate(-50%,100%); z-index: 1100; background-color: #fff; color: $main_color; box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.2); border: 4px solid $main_color; border-radius: 50%; opacity: 0;
+.i_guide_focus_box {display: flex; align-items: center; justify-content: center; line-height: 1; font-size: 18px; font-weight: 900; width: $guide_focus_box_size; height: $guide_focus_box_size; position: absolute; left: 50%; top: 0; transform: translate(-50%,100%); z-index: 1100; background-color: #fff; color: $main_color; box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.2); border: 4px solid $main_color; border-radius: 50%; opacity: 0;
     &.active {opacity: 1; animation: i_guide_focus_ani 1s infinite forwards alternate ease-out}
     &::after {content: ''; display: block; width: 0; height: 0; border: 10px solid transparent; border-top-color: $main_color; position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 100%);}
 }
@@ -87,6 +98,3 @@ $guide_focus_box_size : 28px;
     from {border: 1px solid transparent;}
     to {border: 1px solid $focus_line_color;}    
 }
-
-
-
